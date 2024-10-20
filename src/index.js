@@ -2,9 +2,13 @@ function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
+  let descrptionElement = document.querySelector("#description");
+
+  console.log(response.data.condition.description);
 
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperature);
+  descrptionElement.innerHTML = response.data.condition.description;
 }
 
 function searchCity(city) {
